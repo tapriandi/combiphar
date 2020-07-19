@@ -1,34 +1,16 @@
-$(window).ready(function() {
+jQuery(window).ready(function() {
 
-  let screenWide = document.body.clientWidth;
-  $('.page-image .image').css('width', (screenWide + 'px'));
+  AOS.init();
 
-  // let bannerVideo = document.getElementsByClassName('box-video');
-  // document.body.addEventListener('mousemove', cursorPositionHandler);
-
-  // function cursorPositionHandler(e) {
-  //   let decimalX = e.clientX / window.innerWidth - 0.5,
-  //       decimalY = e.clientY / window.innerheight - 0.5;
-  //   TweenMax.to(bannerVideo, 1, {
-  //     rotationX: 10 * decimalY,
-  //     rotationY: 10 * decimalX,
-  //     ease: Quad.easeOut,
-  //     transformPerspective: 900,
-  //     transformOrigin: 'center'
-  //   });
-  // };
-
+  // ---------- perss slider -----------
   var swiperAnimation = new SwiperAnimation();
   var swiper = new Swiper(".swiper-container", {
     direction: "horizontal",
     slidesPerView: 'auto',
-    initialSlide: 2,
+    initialSlide: 1,
     speed: 1000,
-    spaceBetween: 40,
     loop: false,
-    // mousewheel: true,
-    // grabCursor: true,
-    centeredSlides: true,
+    // centeredSlides: true,
     mousewheel: {
       eventsTarged: ".swiper-slide",
       sensitivity: 5
@@ -55,4 +37,20 @@ $(window).ready(function() {
       }
     }
   });
+  
+  // ---------- perspective paralax-----------
+  var cardWrap = document.getElementsByClassName('perspective');
+  document.body.addEventListener('mousemove', cursorPositionHandler);
+  function cursorPositionHandler(e) {
+    var decimalX = e.clientX / window.innerWidth - 0.5;
+    var decimalY = e.clientY / window.innerHeight - 0.5;
+    TweenMax.to(cardWrap, 0.5, {
+      rotationY: 5 * decimalX,
+      rotationX: 5 * decimalY,
+      ease: Quad.easeOut,
+      transformPerspective: 700,
+      transformOrigin: "center"
+    });
+  };
+
 });
