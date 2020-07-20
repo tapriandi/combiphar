@@ -7,7 +7,7 @@ jQuery(window).ready(function() {
   var swiper = new Swiper(".swiper-container", {
     direction: "horizontal",
     slidesPerView: 'auto',
-    initialSlide: 1,
+    // initialSlide: 1,
     speed: 1000,
     loop: false,
     // centeredSlides: true,

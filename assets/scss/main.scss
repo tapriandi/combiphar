@@ -685,12 +685,12 @@ footer {
       background: linear-gradient($purple-op, $darkpurple-op);
       h5 {
         margin-bottom: 20px;
-        overflow: hidden;
+        // overflow: hidden;
         color: $white;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 3;
+        // -webkit-box-orient: vertical;
+        // text-overflow: ellipsis;
       }
       p {
         display: -webkit-box;
